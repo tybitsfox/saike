@@ -10,6 +10,8 @@
 #include"myapp.h"
 
 
+
+
 BOOL myapp::InitInstance()
 {
 	mydlg mdlg;

@@ -16,7 +16,27 @@ BOOL mydlg::OnInitDialog()
 };
 afx_msg void mydlg::OnOK()
 {
-	CDialog::OnOK();
+	CString str;
+	int i=msht.GetActiveIndex();
+	switch(i)
+	{
+	case 0://
+		msht.mpg1.osave();
+		return;
+	case 1:
+		msht.mpg2.onsave();
+	case 2:
+		str="page3";
+		break;
+	case 3:
+		str="page4";
+		break;
+	case 4:
+		str="page5";
+		break;
+	};
+	MessageBox(str);
+//	CDialog::OnOK();
 };
 afx_msg void mydlg::OnCancel()
 {
