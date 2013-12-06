@@ -1,0 +1,29 @@
+LIBRARY	saikedll
+
+EXPORTS
+	;;
+	cwrklg				@1
+	cmchlg				@2
+	cgz					@3
+	cweixiu				@4
+	cruku				@5
+	cuser				@6
+	save_wrklg			@7
+	save_mchlg			@8
+	save_gz				@9
+	save_weixiu			@10
+	save_ruku			@11
+	save_user			@12
+	read_sys			@13
+	update_sys			@14
+	clean_ary			@15
+	read_wrklg			@16
+	read_mcglg			@17
+	read_gz				@18
+	read_weixiu			@19
+	read_ruku			@20
+	read_user			@21
+	
+	
+
+
