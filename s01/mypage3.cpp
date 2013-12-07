@@ -2,7 +2,8 @@
 #include"mypage3.h"
 #include"datastruct.h"
 
-
+typedef int (WINAPI *SAVE_GZ)(void*);
+SAVE_GZ s_gz=NULL;
 
 IMPLEMENT_DYNCREATE(mypage3,CPropertyPage)
 
@@ -33,7 +34,7 @@ int mypage3::onsave()
 {
 	tagguzhang gz;
 	CString str;
-	int i,j;
+	int i;
 	CDateTimeCtrl *tcl=(CDateTimeCtrl*)GetDlgItem(IDC_DATETIMEPICKER1);
 	memset((void*)&gz,0,sizeof(gz));//发现时间
 	tcl->GetTime(gz.sendtime);
@@ -85,8 +86,18 @@ int mypage3::onsave()
 		MessageBox("加载链接库失败。");
 		return 1;
 	}
-
-
+	s_gz=(SAVE_GZ)::GetProcAddress(mod,"save_gz");
+	if(s_gz==NULL)
+	{
+		::FreeLibrary(mod);
+		MessageBox("getprocaddress error");
+		return 1;
+	}
+	if(s_gz((void*)&gz)==0)
+	{
+		MessageBox("保存成功");
+	}
+	::FreeLibrary(mod);
 	return 0;
 err_01:
 	MessageBox("some where error");

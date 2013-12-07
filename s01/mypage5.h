@@ -9,5 +9,6 @@ public:
 	DECLARE_DYNCREATE(mypage5)
 	mypage5():CPropertyPage(IDD_PROPPAGE_SMALL4){};
 	BOOL OnInitDialog();
+	int onsave();//
 DECLARE_MESSAGE_MAP()
 };

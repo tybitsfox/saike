@@ -62,7 +62,7 @@ int mypage1::osave()
 {
 	tagwrklog tlg;
 	CString str;
-	int i,j,k;
+	int i;
 	memset((void*)&tlg,0,sizeof(tlg));
 	CDateTimeCtrl *tm;
 	tm=(CDateTimeCtrl*)GetDlgItem(IDC_DATETIMEPICKER1);

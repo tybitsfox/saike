@@ -18,7 +18,7 @@ BOOL mypage2::OnInitDialog()
 int mypage2::onsave()
 {
 	tagmchlog mch,mbk;
-	int i,j;
+	int i;
 	CString str;
 	cmch.RemoveAll();
 	memset((void*)&mch,0,sizeof(mch));
