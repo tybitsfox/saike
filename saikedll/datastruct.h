@@ -130,6 +130,7 @@ typedef struct _TAGUSER
 	int		jifang_item;				//同上
 	int		ruku;						//同上
 	int		rep_log;					//同上
+	int		user_p;						//用户表权限，同上
 }taguser;
 //基本信息表，可作为系统表使用，由系统根据需要访问，用户无法直接操作该表
 typedef struct _TAGBASE

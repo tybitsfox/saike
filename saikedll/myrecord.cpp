@@ -28,7 +28,7 @@ myrecord::myrecord(CDatabase *db):CRecordset(db)
 		break;
 	case 5://_TAGUSER 用户表
 		memset((void*)&usr,0,sizeof(usr));
-		m_nFields=16;
+		m_nFields=17;
 		break;
 	case 6://_TAGBASE 系统表
 		memset((void*)&bas,0,sizeof(bas));
@@ -166,6 +166,7 @@ void myrecord::DoFieldExchange(CFieldExchange *pfx)
 		RFX_Int(pfx,"jifang_item",usr.jifang_item);
 		RFX_Int(pfx,"ruku",usr.ruku);
 		RFX_Int(pfx,"rep_log",usr.rep_log);
+		RFX_Int(pfx,"user_p",usr.user_p);
 		break;
 	case 6://表7   系统表
 		RFX_Text(pfx,"name",bas.name,dlen_m);
